@@ -1,27 +1,3 @@
-import React, { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ShoppingCart, Store, Trash2 } from "lucide-react";
-import { motion } from "framer-motion";
-
-export default function ArewaLuxuryMarketplace() {
-  const [products, setProducts] = useState([
-    { id: 1, name: "Hausa Traditional Cap", price: 15000, vendor: "Arewa Caps" },
-    { id: 2, name: "Luxury Kaftan", price: 45000, vendor: "Northern Style" },
-  ]);
-
-  const [cart, setCart] = useState([]);
-  const [newProduct, setNewProduct] = useState({
-    name: "",
-    price: "",
-    vendor: "",
-  });
-
-  const addToCart = (product) => {
-    setCart((prev) => [...prev, product]);
-  };
-
-  const removeFromCart = (index) => {
     setCart((prev) => prev.filter((_, i) => i !== index));
   };
 
